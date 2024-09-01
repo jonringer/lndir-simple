@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -exo pipefail
+set -eo pipefail
 
 log() {
   echo "$@" >&2
@@ -44,9 +44,6 @@ done
 # fromDir was parsed of arg loop
 if [ "$#" -lt 1 ]; then
   log "must pass <from dir> and <to dir> to lndir";
-  echo "$fromDir"
-  echo "$#"
-  echo "$@"
   exit 1
 fi
 
