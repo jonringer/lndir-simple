@@ -86,6 +86,6 @@ fi
 
 if [ ! -d "$fromDir" ]; then
   ln -s "$(realpath "$fromDir")" "$(realpath "$toDir")"
+else
+  shadow_copy_dir "$(realpath "$fromDir")" "$(realpath "$toDir")"
 fi
-
-shadow_copy_dir "$(realpath "$fromDir")" "$(realpath "$toDir")"
