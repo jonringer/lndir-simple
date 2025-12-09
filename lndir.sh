@@ -73,8 +73,13 @@ shadow_copy_dir() {
       shadow_copy_dir "$newFromDir" "$newToDir"
     else
       fullFromPath="$(realpath "${from}/${baseName}")"
+      toPath="${to}/$(basename "$f")"
 
-      ln -s "$fullFromPath" "${to}/$(basename "$f")"
+      if [ -e "${toPath}" ]; then
+        log "${toPath}: File exists"
+      else
+        ln -s "$fullFromPath" "${toPath}"
+      fi
     fi
   done
 }
