@@ -22,13 +22,10 @@ while [ "$#" -gt 0 ]; do
   i="$1"; shift 1
   case "$i" in
     -silent)
-      shift 1
       ;;
     -ignorelinks)
-      shift 1
       ;;
     -withrevinfo)
-      shift 1
       ;;
     --help)
       usage
